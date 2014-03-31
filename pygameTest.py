@@ -32,12 +32,14 @@ while True:
                     pygame.time.wait(1000)
                     print(i)
 
-            DISPLAYSURF.fill(BLACK)
-            pygame.display.update()
-            pygame.time.wait(100);
-            DISPLAYSURF.fill(WHITE)
-            pygame.display.update()
-
+                DISPLAYSURF.fill(BLACK)
+                pygame.display.update()
+                pygame.time.wait(100);
+                DISPLAYSURF.fill(WHITE)
+                pygame.display.update()
+            if event.key == pygame.K_ESCAPE:
+                pygame.quit()
+                sys.quit()
 
 #    for event in pygame.event.get():
         if event.type == QUIT:

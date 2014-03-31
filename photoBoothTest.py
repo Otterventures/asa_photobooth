@@ -42,10 +42,13 @@ while True:
 
             prevState = btnState
         else :
-            print "buttom released"
             prevState = btnState
 
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
-            sys.quit()
+            sys.exit()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_ESCAPE:
+                pygame.quit()
+                sys.exit()
