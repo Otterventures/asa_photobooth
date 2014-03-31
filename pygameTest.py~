@@ -1,0 +1,23 @@
+import pygame, sys
+from pygame.locals import *
+
+pygame.init()
+DISPLAYSURF = pygame.display.set_mode((480,360))
+
+WHITE = (255,255,255)
+RED = (200,24,24)
+
+fontObj = pygame.font.Font('freesansbold.ttf', 32)
+textSurfaceObj = fontObj.render('3', True, RED, WHITE)
+textRectObj = textSurfaceObj.get_rect()
+textRectObj.center = (240,180)
+
+while True:
+    DISPLAYSURF.fill(WHITE)
+    DISPLAYSURF.blit(textSurfaceObj, textRectObj)
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.quit()
+    pygame.display.update()
+    
